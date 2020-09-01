@@ -7,6 +7,6 @@ namespace ShoppingCart.RuleEngine
 {
     public abstract class AbstractPromotionType
     {
-        public abstract void OnPromotionApplication(ICollection<ShoppingItem> items);
+        public abstract void OnPromotionApplication(IEnumerable<ShoppingItem> items);
     }
 }

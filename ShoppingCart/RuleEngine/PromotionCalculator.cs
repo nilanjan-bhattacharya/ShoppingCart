@@ -10,8 +10,6 @@ namespace ShoppingCart.RuleEngine
         ICollection<ShoppingItem> items;
         private List<AbstractPromotionType> _promotions;
 
-        //public decimal PriceAfterPromotion { get; set; }
-
         public PromotionCalculator(ICollection<ShoppingItem> items)
         {
             this._promotions = new List<AbstractPromotionType>();

@@ -1,12 +1,14 @@
-﻿using ShoppingCart.Models;
+using ShoppingCart.Models;
 using System;
 using System.Collections.Generic;
+using Xunit;
 
-namespace ShoppingCart
+namespace XUnitShoppingCart
 {
-    class Program
+    public class UnitTestShoppingCart
     {
-        static void Main(string[] args)
+        [Fact]
+        public void Test1()
         {
             SKU[] skus = {  new SKU {ID = 'A', Price = 50 },
                             new SKU {ID = 'B', Price = 30},
@@ -16,17 +18,14 @@ namespace ShoppingCart
 
 
             var CartItems = new List<ShoppingItem>() {
-                new ShoppingItem { Item = skus[0], Quantity = 3 },
+                new ShoppingItem { Item = skus[0], Quantity = 5 },
                 new ShoppingItem { Item = skus[1], Quantity = 5 },
-                new ShoppingItem { Item = skus[2], Quantity = 1 },
-                new ShoppingItem { Item = skus[3], Quantity = 1 }
+                new ShoppingItem { Item = skus[2], Quantity = 1 }
             };
 
             Basket sc = new Basket(CartItems);
 
-            Console.WriteLine(sc.FinalValue);//370
-
-            Console.ReadKey();
+            Assert.Equal(370, sc.FinalValue);
         }
     }
 }

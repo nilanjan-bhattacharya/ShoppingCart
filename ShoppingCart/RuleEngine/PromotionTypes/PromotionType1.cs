@@ -19,7 +19,7 @@ namespace ShoppingCart.RuleEngine
             this.FixedPrice = fixedPrice;
         }
 
-        public override void OnPromotionApplication(ICollection<ShoppingItem> items)
+        public override void OnPromotionApplication(IEnumerable<ShoppingItem> items)
         {
             foreach(var item in items)
             {
