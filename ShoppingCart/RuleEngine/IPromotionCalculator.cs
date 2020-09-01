@@ -1,8 +1,6 @@
-﻿using ShoppingCart.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/// <summary>
+/// Interface defining the compute method
+/// </summary>
 namespace ShoppingCart.RuleEngine
 {
     interface IPromotionCalculator

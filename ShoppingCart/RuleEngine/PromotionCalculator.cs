@@ -5,22 +5,20 @@ using System.Text;
 
 namespace ShoppingCart.RuleEngine
 {
+    /// <summary>
+    /// The class where Context for the rule engine is set up
+    /// </summary>
     class PromotionCalculator : IPromotionCalculator
     {
-        ICollection<ShoppingItem> items;
-        private List<AbstractPromotionType> _promotions;
+        private IEnumerable<ShoppingItem> items; // data items in the rule context
+        private IEnumerable<AbstractPromotionType> _promotions; // promotion rules which are to be executed
 
-        public PromotionCalculator(ICollection<ShoppingItem> items)
+        public PromotionCalculator(IEnumerable<ShoppingItem> items, IEnumerable<AbstractPromotionType> promotions)
         {
-            this._promotions = new List<AbstractPromotionType>();
-
+            this._promotions = promotions;
             this.items = items;
 
-            _promotions.Add(new PromotionType1('A', 3, 130));
-            _promotions.Add(new PromotionType1('B', 2, 45));
-            _promotions.Add(new PromotionType2('C', 'D', 30));
         }
-
 
         public decimal ComputeResult()
         {
